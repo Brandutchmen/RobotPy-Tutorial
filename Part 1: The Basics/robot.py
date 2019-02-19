@@ -8,6 +8,7 @@ Wpilib - Base FRC package
 '''
 
 import wpilib
+from wpilib import drive
 
 class MyRobot(wpilib.IterativeRobot): #<-- This is the base class for the entire robot
 
@@ -35,9 +36,9 @@ class MyRobot(wpilib.IterativeRobot): #<-- This is the base class for the entire
         self.playerOne = wpilib.XboxController(0)# <-- This is for using Xbox controllers
 
 
-        #Now we need to link our motors to the RobotDrive class
+        #Now we need to link our motors to the DifferentialDrive class
 
-        self.robotDrive = wpilib.RobotDrive(self.leftMotor, self.rightMotor)
+        self.robotDrive = wpilib.drive.DifferentialDrive(self.leftMotor, self.rightMotor)
 
 
     def disabledInit(self):
